@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web2-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx2
+  template:
+    metadata:
+      name: nginx-pod
+      labels:
+        app: nginx2
+    spec:
+      containers:
+      - name: nginx-con
+        image: 825958448855.dkr.ecr.ap-northeast-2.amazonaws.com/app2:1
